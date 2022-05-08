@@ -1,0 +1,102 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Part II: Birthdate Meaning Generator</title>
+</head>
+<body>
+
+<script>
+  //5/2/22 New 1L:Use prompt to ask for Name, Age, Gender (Male/Female), Height by feet,	
+	//5/2/22 New 1L:Prompt: Please enter your name: _______________________
+	//5/2/22 New 1L:Save it to name variable
+	let name=prompt("Please enter your name:");	
+	//5/2/22 New 1L:Prompt: Please enter your Gender: ______________________ Save it to gender variable
+	let gender=prompt("Please enter your Gender: ");
+	
+	// 5/2/22 New 1L:Prompt: Please enter your month of your birthday (1-12): _________________ Save it to month variable
+	let month=parseInt(prompt("Please enter your month of your birthday (1-12): "));	
+	//5/2/22 New 1L: Prompt: Please enter your day of your birthday (1-31):  _________________ Save it to day variable
+	let day=parseInt(prompt("Please enter your day of your birthday (1-31): "));
+	
+	//5/2/22 New 1L: Prompt: Please enter your year of your birthday (2000-2022): _________________ Save it to month variable
+	let year=parseInt(prompt("Please enter your year of your birthday (2000-2022): "));
+	
+	let monthres='',dayres='',  yearres='';
+	//5/2/22 New 1L: for month
+	switch(month)
+	{
+		case 1: monthres='The Father';	
+				break;
+		case 2: monthres='The Mother';	
+				break;				
+		case 3: monthres='The Charismatic Child';	
+				break;				
+		case 4: monthres='The Dependable One';	
+				break;				
+		case 5: monthres='The Free Spirit';	
+				break;				
+		case 6: monthres='The Nurturer';	
+				break;				
+		case 7: monthres='The Philosopher';	
+				break;				
+		case 8: monthres='The Practical Professional';	
+				break;				
+		case 9: monthres='The Tolerant Humanitarian';	
+				break;				
+		case 10: monthres='The Energetic Builder';	
+				break;				
+		case 11: monthres='The Energetic Visionary';	
+				break;				
+		case 12: monthres='The Master Builder';	
+				break;				
+	}
+	
+	//5/2/22 New 1L: for day
+	switch(day)
+	{
+		case 1: case 10: case 19: case 28:dayres='The Sun';break;				
+		case 2: case 11: case 20: case 29: dayres='The Moon';	break;
+		case 3: case 12: case 21: case 30: dayres='The Jupiter';	break;				
+		case 4: case 13: case 22: case 31: dayres='The Rahu';	break;				
+		case 5: case 14: case 23: dayres='The Mercury';	break;				
+		case 6: case 15: case 24: dayres='The Venus';	break;				
+		case 7: case 16: case 25: dayres='The Ketu';	break;				
+		case 8: case 17: case 26: dayres='The Saturn';	break;				
+		case 9: case 18: case 27: dayres='The Mars';	break;						
+		
+	}
+	
+
+	//5/2/22 New 1L:for year
+	switch(year-2000)
+	{
+		case 20: case 8: yearres='The Rat';break;				
+		case 21: case 9: yearres='The Ox';	break;
+		case 22: case 10: yearres='The Tiger';	break;				
+		case 11: yearres='The Rabbit';	break;				
+		case 12: case 0: yearres='The Dragon';	break;				
+		case 13: case 1: yearres='The Snake';	break;				
+		case 14: case 2: yearres='The Horse';break;				
+		case 15: case 3: yearres='The Goat';break;				
+		case 16: case 4: yearres='The Monkey';	break;				
+		case 17: case 5: yearres='The Rooster';	break;				
+		case 18: case 6: yearres='The Dog';	break;				
+		case 18: case 7: yearres='The Pig';	break;						
+		
+	}
+
+
+
+	document.write(' You have entered the following information: <br/>');
+	document.write(' <b>Name: </b>'+name+'<br/>');	
+	document.write(' <b>Gender: </b>'+gender+'<br/>');
+	document.write(' <b>Birthday: </b>'+month+'/'+day+'/'+month+'<br/>');
+	document.write(' Your month of your birthday is in ('+month+'), which means that ('+monthres+')'+'<br/>');
+	document.write('Your day of your birthday is in ('+day+'), which means that ('+dayres+')<br/>');
+	document.write('Your year of your birthday is in ('+year+'), which means that ('+yearres+').<br/>');
+	document.write('Thanks for playing!');
+
+</script>
+</body>
+</html>

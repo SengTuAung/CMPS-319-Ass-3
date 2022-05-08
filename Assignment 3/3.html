@@ -1,0 +1,80 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Part III: Gradebook System</title>
+</head>
+<body>
+
+<script>
+	//5/2/22 New 1L:Use prompt to ask for Name and Course Name
+	
+	//5/2/22 New 1L:Prompt: Please enter your name: _______________________
+	//5/2/22 New 1L: Save it to name variable
+	let name=prompt("Please enter your name:");
+	//5/2/22 New 1L: Prompt: Please enter your course name: _________________________ Save it to course variable
+	let course=prompt("Please enter your course name: ");
+	
+	//5/2/22 New 1L: Ask this in sentinel-controlled repetition
+	let isContinue=1;
+	let grade=0;
+	let Percentage=0;
+	while(isContinue==1){
+		//5/2/22 New 1L: Prompt: Please enter your grade: _______________________ Save it to gradepre variable	
+		let gradepre=prompt("Please enter your grade: ");
+		if(gradepre==-1)
+			isContinue=0;
+		else
+		{
+		
+			//5/2/22 New 1L: Prompt: Please enter your weight: _______________________ Save it to percentage variable 
+			let percentage=parseInt(prompt("Please enter your weight: "));
+		
+			gradepre = gradepre * (percentage/100);
+			grade += gradepre;
+			Percentage += percentage;
+		}
+	
+	}
+	
+	//5/2/22 New 1L:Name: ____________________
+	//5/2/22 New 1L: Course: ___________________
+	//5/2/22 New 1L: Overall Grade: 70% - C
+	let result=grade*100/Percentage;
+	let gradeLetter='';
+	if(result>=95)
+		gradeLetter='A';
+	else
+		if(result>=90)
+			gradeLetter='A-';
+		else
+			if(result>=87)
+			   gradeLetter='B+';
+			else
+			   if(result>=83)
+			      gradeLetter='B';
+			   else
+				  if(result>=80)
+				    gradeLetter='B-';
+				  else
+					 if(result>=77)
+					    gradeLetter='C+';
+					 else
+					    if(result>=73)
+					      gradeLetter='C';						  
+						else						
+					       if(result>=70)
+							  gradeLetter='C-';						  
+						   else
+						     if(result>=65)
+								gradeLetter='D';
+							 else
+							    gradeLetter='F';
+		
+	document.write(' <b>Name: </b>'+name+'<br/>');
+	document.write(' <b>Course: </b>'+course+'<br/>');	
+	document.write(' <b>Overall Grade: </b>'+Math.round(result)+'% - '+gradeLetter+'<br/>');
+
+</script>
+</body>
+</html>

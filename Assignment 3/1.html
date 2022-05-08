@@ -1,0 +1,70 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Part I: BMI Calculator</title>
+</head>
+<body>
+
+<script>
+  // Saung 5/2/22 New 1L: Use prompt to ask for Name, Age, Gender (Male/Female), Height by feet,
+	// Saung 5/2/22 New 1L: Height by inches and Weight in pounds
+	//Saung 5/2/22 New 1L:: Prompt: Please enter your name: _______________________
+	//Saung 5/2/22 New 1L: Save it to name variable
+	let name=prompt("Please enter your name:");
+	//Saung 5/2/22 New 1L: New 1L: Prompt: Please enter your age: _________________________ Save it to age variable
+	let age=prompt("Please enter your age: ");
+	//5/2/22 New 1L:Prompt: Please enter your Gender: ______________________ Save it to gender variable
+	let gender=prompt("Please enter your Gender: ");
+	//5/2/22 New 1L: Prompt: Please enter your height in feet: _________________ Save it to heightbyft variable
+	let heightbyft=prompt("Please enter your height in feet: ");
+	//5/2/22 New 1L: Prompt: Please enter your height in inches: _______________ Save it to heightbyin variable
+	let heightbyin=prompt("Please enter your height in inches: ");
+	//5/2/22 New 1L: Prompt: Please enter your weight in pounds: _____________ Save it to weight variable
+	let weight=prompt("Please enter your weight in pounds: ");
+	
+	
+	//5/2/22 New 1L:convert height by feet and height by inches to inches by using this formula:
+	let height= (heightbyft * 12) +heightbyin;
+	//5/2/22 New 1L: determine the BMI 
+	let weightKg=weight*0.453592;
+	let heightM=height*2.54/100;
+	
+	let BMI=703 *weightKg/(heightM*heightM);
+	//5/2/22 New 1L:determine the status of BMI
+	let status="";
+	if(BMI<16)
+		status='Severe Thinness';
+	else
+		if(BMI<17)
+			status='Moderate Thinness';
+		else
+			if(BMI<18.5)
+			   status='Mid Thinness';
+			else
+			   if(BMI<25)
+			      status='Normal';
+			   else
+				  if(BMI<30)
+				    status='Overweight';
+				  else
+					 if(BMI<35)
+					    status='Obese Class I';
+					 else
+					    if(BMI<40)
+					      status='Obese Class II';
+						else						
+					       status='Obese Class III';
+		
+	document.write(' <b>Name: </b>'+name+'<br/>');
+	document.write(' <b>Age: </b>'+age+'<br/>');
+	document.write(' <b>Gender: </b>'+gender+'<br/>');
+	document.write(' <b>Height in feet: </b>'+heightbyft+'<br/>');
+	document.write(' <b>Height in inches: </b>'+heightbyin+'<br/>');
+	document.write(' <b>Weight: </b>'+weight+'<br/>');
+	document.write('Your BMI is '+BMI+', which is '+status+'<br/>');
+	document.write('Thank you for using our BMI Calculator');
+
+</script>
+</body>
+</html>
